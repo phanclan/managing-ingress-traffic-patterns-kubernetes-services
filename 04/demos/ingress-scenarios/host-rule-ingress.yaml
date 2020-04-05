@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: host-rule-ingress
+spec:
+  rules:
+  - host: your-hostname
+    http:
+      paths:
+      - backend:
+          serviceName: nginxhello-blue
+          servicePort: 80
+  tls:
+  - hosts:
+    - your-hostname
+    secretName: your-hostname-tls

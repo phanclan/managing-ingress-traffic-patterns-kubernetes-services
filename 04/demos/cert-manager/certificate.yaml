@@ -1,0 +1,16 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: your-hostname
+  namespace: default
+spec:
+  commonName: your-hostname
+  acme:
+    config:
+    - http01:
+        ingressClass: nginx
+      domains:
+      - your-hostname
+  issuerRef:
+    name: acme-letsencrypt-staging
+  secretName: your-hostname-tls
