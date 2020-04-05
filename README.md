@@ -1,1 +1,0 @@
-# managing-ingress-traffic-patterns-kubernetes-services
