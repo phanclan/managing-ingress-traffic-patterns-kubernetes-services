@@ -7,9 +7,21 @@ spec:
     serviceName: nginxhello-default
     servicePort: 80
   rules:
-  - host: dibble.sh
+  # - host: ingress.example.com
+  #   http:
+  #     paths:
+  #     - backend:
+  #         serviceName: nginxhello-default
+  #         servicePort: 80
+  - host: blue.ingress.example.com
     http:
       paths:
       - backend:
           serviceName: nginxhello-blue
+          servicePort: 80
+  - host: red.ingress.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: nginxhello-red
           servicePort: 80
